@@ -1,17 +1,8 @@
-beautifulsoup4==4.6.3
 bs4==0.0.1
 fuzzywuzzy==0.18.0
-matplotlib==3.2.2
-nltk==3.7
-numpy==1.23.0
-opencv-python==4.6.0.66
-openpyxl==3.0.10
 pandas
 python-Levenshtein==0.20.7
 treetaggerwrapper==2.3
 tqdm==4.64.1
 Flair==0.10
 xlrd
-
--f https://download.pytorch.org/whl/torch_stable.html 
-torch==1.7.1+cpu
