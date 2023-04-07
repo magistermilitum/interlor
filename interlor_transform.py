@@ -1,12 +1,15 @@
 import pandas as pd
 import re
+import subprocess,os
 from flair.data import Sentence
 from flair.models import SequenceTagger
 from flair.models import TextClassifier
 import treetaggerwrapper
 
 
-
+current_path=os.path.abspath(os.getcwd())
+#authorize executable file on linux environments
+subprocess.check_call(['chmod', '+x', current_path+"/treetagger/treetagger/bin/tree-tagger"])
 class Data:
     def __init__(self, data_file):
         self.data_file = data_file
