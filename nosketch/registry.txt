@@ -1,0 +1,60 @@
+MAINTAINER "sergio.torres@uni.lu"
+INFO "interlor"
+NAME "INTERLOR database"
+PATH interlor
+ENCODING "UTF-8"
+LANGUAGE "Latin"
+SHORTREF "=doc.id"
+
+PATH   '/corpora/endp/indexed/'
+VERTICAL  '/corpora/endp/vertical/source'
+
+
+IINFOHREF "XXX"
+TAGSETDOC "https://glossaria.eu/lemmatisation/#page-content"
+
+FULLREF "doc.title,doc.date,doc.regeste,doc.id"
+
+ATTRIBUTE   word
+ATTRIBUTE   tag
+ATTRIBUTE   lemma
+ATTRIBUTE   ner
+ATTRIBUTE   region
+
+ATTRIBUTE   lc {
+	LABEL	"word (lowercase)"
+	DYNAMIC  utf8lowercase
+	DYNLIB   internal
+	ARG1     "C"
+	FUNTYPE  s
+	FROMATTR word
+	TYPE     index
+	TRANSQUERY	yes
+}
+
+ATTRIBUTE   lemma_lc {
+	LABEL	"lemma (lowercase)"
+	DYNAMIC  utf8lowercase
+	DYNLIB   internal
+	ARG1     "C"
+	FUNTYPE  s
+	FROMATTR lemma
+	TYPE     index
+	TRANSQUERY	yes
+}
+
+
+STRUCTURE   doc {
+   ATTRIBUTE date 
+   ATTRIBUTE title
+   ATTRIBUTE regeste
+   ATTRIBUTE id
+}
+
+
+STRUCTURE s {
+	ATTRIBUTE zone 
+	   DISPLAYTAG 0
+	   DISPLAYBEGIN " |%(zone) ==> "
+	   DISPLAYEND " | "
+} 
