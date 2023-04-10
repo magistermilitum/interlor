@@ -13,7 +13,8 @@ VERTICAL  '/corpora/endp/vertical/source'
 IINFOHREF "XXX"
 TAGSETDOC "https://glossaria.eu/lemmatisation/#page-content"
 
-FULLREF "doc.title,doc.date,doc.regeste,doc.id"
+FULLREF "doc.act_title,doc.date,doc.regeste,doc.id,doc.year"
+FREQTTATTRS "doc.act_title,doc.date,doc.id,doc.year"
 
 ATTRIBUTE   word
 ATTRIBUTE   tag
@@ -46,9 +47,10 @@ ATTRIBUTE   lemma_lc {
 
 STRUCTURE   doc {
    ATTRIBUTE date 
-   ATTRIBUTE title
+   ATTRIBUTE act_title
    ATTRIBUTE regeste
    ATTRIBUTE id
+   ATTRIBUTE year
 }
 
 
